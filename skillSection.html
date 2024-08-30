@@ -1,0 +1,33 @@
+<template>
+    <div class="about_div slds-p-around_none slds-m-top_x-small slds-m-bottom_medium">
+        <lightning-layout multiple-rows>
+            <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="6"
+                class="slds-align_absolute-center">
+                <div class="profile_pic">
+                    <img src={skillImage} alt="Profile Picture" />
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item padding="around-small" size="12" medium-device-size="6" large-device-size="6"
+                class="slds-align_absolute-center">
+                <div>
+                    <div class="profile_title">
+                        <h1>Skills</h1>
+                    </div>
+                    <p class="para_text">
+                        <b>"With six months of hands-on internship experience in Salesforce CRM, I've honed my skills as both a Developer and Administrator, adept at crafting efficient solutions and optimizing user experiences within the platform."</b>
+                    </p>
+
+                    <div class="skills_div">
+                        <template for:each={skills} for:item="skill">
+                            <div class="slds-p-around_x-small" key={skill.name}>
+                                <p><b>{skill.name}</b></p>
+                                <lightning-progress-bar value={skill.value} size="large" variant="circular"></lightning-progress-bar>
+                            </div>
+                        </template>
+                    </div>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>
